@@ -1,0 +1,47 @@
+body {
+  font: 10px Verdana;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.documents-tabs {
+  position: absolute;
+  bottom: 0px;
+  border: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+}
+
+.documents-tabs .ui-tabs-panel, .documents-tabs .ui-tabs-panel pre {
+  padding: 0px;
+  margin: 0px;
+}
+
+.documents-tabs .ui-tabs-nav .ui-icon { float: left; margin: 0.3em 0.2em 0 0; cursor: pointer; }
+.documents-tabs .ui-tabs-nav a { padding-right: 2px !important; }
+
+.ace_gutter {
+  background: -webkit-gradient(linear, left top, right top, from(#181415), to(#323232)) !important;
+  color: #fff !important;
+  font-weight: bold;
+  border-right: 1px solid #282425;
+  width: 49px !important;
+}
+
+   .details > .scroller::-webkit-scrollbar {
+      width: 13px;
+      height: 13px; }
+    .details > .scroller::-webkit-scrollbar-button:start:decrement, .details > .scroller::-webkit-scrollbar-button:end:increment {
+      display: none; }
+    .details > .scroller::-webkit-scrollbar-button:vertical:start:increment, .details > .scroller::-webkit-scrollbar-button:vertical:end:decrement {
+      display: none; }
+    .details > .scroller::-webkit-scrollbar-track-piece {
+      background-color: transparent; }
+    .details > .scroller::-webkit-scrollbar-thumb:vertical {
+      background-color: #242424;
+      -webkit-border-radius: 6px; }
+

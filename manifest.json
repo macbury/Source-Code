@@ -1,0 +1,16 @@
+{
+  "name": "Source Code",
+  "description": "Enter a world where a Vanagon can beat a Maserati",
+  "version": "0.0.1",
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  },
+  "icons": {
+    "128": "128.png"
+  },
+  "permissions": [
+    "unlimited_storage"
+  ]
+}
