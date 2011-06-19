@@ -5,43 +5,214 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background: #323232 url(../assets/background.jpg) repeat;
 }
 
 .documents-tabs {
   position: absolute;
   bottom: 0px;
   border: 0px;
-  left: 0px;
+  left: 240px;
   right: 0px;
   top: 0px;
+  background: transparent;
 }
 
 .documents-tabs .ui-tabs-panel, .documents-tabs .ui-tabs-panel pre {
   padding: 0px;
   margin: 0px;
+  border: 0px;
 }
 
-.documents-tabs .ui-tabs-nav .ui-icon { float: left; margin: 0.3em 0.2em 0 0; cursor: pointer; }
-.documents-tabs .ui-tabs-nav a { padding-right: 2px !important; }
+.documents-tabs .ui-tabs-nav {
+  border: 0px;
+  height: 25px;
+  padding: 1px 0px 0 0px;
+  border-radius: 0px;
+  background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #262829),color-stop(1, #2F3031));
+  border-bottom: 1px solid #1F1F1F;
+  border-top: 1px solid #1F1F1F;
+  -webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.06) inset;
+}
 
+.documents-tabs .ui-tabs-nav .ui-state-default {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6A6B6E), to(#3E3E3E));
+  color: #fff;
+  text-shadow: rgba(41, 42, 43, 1) 0px 1px 0px;
+  border-right: 1px solid #282425;
+}
+
+.documents-tabs .ui-tabs-nav .ui-state-hover, .documents-tabs .ui-tabs-nav .ui-state-active {
+  color: white;
+  text-shadow: rgba(41, 42, 43, 1) 0px 1px 0px;
+  border-color: #2E63A5;
+  background: #5E9AE2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5E9AE2), to(#3570B8));
+}
+
+.documents-tabs .ui-tabs-nav .ui-tabs-selected {
+  background: #3E3E3E !important;
+  color: #fff !important;
+  text-shadow: rgba(41, 42, 43, 1) 0px 1px 0px;
+  border-right: 1px solid #282425;
+  top: 0px !important;
+}
+
+.documents-tabs .ui-tabs-nav .ui-tabs-selected a {
+  color: #fff !important;
+}
+
+.documents-tabs .ui-tabs-nav .ui-icon { float: left; }
+.documents-tabs .ui-tabs-nav .ui-icon-circle-close { margin: 0.3em 0.2em 0 0;  cursor: pointer; }
+.documents-tabs .ui-tabs-nav .ui-icon-document { margin: 0.3em 0 0.2em; }
+.documents-tabs .ui-tabs-nav a { padding-right: 2px !important; padding-left: 2px !important; }
+.documents-tabs .ui-tabs-nav .ui-tabs-selected .tab {color: #fff !important;}
 .ace_gutter {
   background: -webkit-gradient(linear, left top, right top, from(#181415), to(#323232)) !important;
-  color: #fff !important;
+  color: #CCC !important;
   font-weight: bold;
   border-right: 1px solid #282425;
   width: 49px !important;
+  
+  background: -webkit-gradient(linear,left top, right top,color-stop(0, #262829),color-stop(1, #2F3031));
+  border-right: 1px solid #1F1F1F;
+  -webkit-box-shadow: -1px 0 0 rgba(255, 255, 255, 0.06) inset;
+  text-shadow: rgba(41, 42, 43, 1) 0px 1px 0px;
 }
 
-   .details > .scroller::-webkit-scrollbar {
-      width: 13px;
-      height: 13px; }
-    .details > .scroller::-webkit-scrollbar-button:start:decrement, .details > .scroller::-webkit-scrollbar-button:end:increment {
-      display: none; }
-    .details > .scroller::-webkit-scrollbar-button:vertical:start:increment, .details > .scroller::-webkit-scrollbar-button:vertical:end:decrement {
-      display: none; }
-    .details > .scroller::-webkit-scrollbar-track-piece {
-      background-color: transparent; }
-    .details > .scroller::-webkit-scrollbar-thumb:vertical {
-      background-color: #242424;
-      -webkit-border-radius: 6px; }
+.ace_print_margin {
+  right: 0px;
+  width: auto !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.file-manager {
+  background: #323232;
+  left: 0px;
+  top: 0px;
+  bottom: 42px;
+  width: 239px;
+  position: absolute;
+  border-right: 1px solid #1F1F1F;
+  -webkit-box-shadow: -1px 0 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+.command-line {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #1D1D1D),color-stop(1, #292929));
+  height: 41px;
+  line-height: 41px;
+  color: #fff;
+  border-top: 1px solid #1F1F1F;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+.command-line input, .command-line input:hover, .command-line input:active, .command-line input:focus {
+  background: #1D1D1D;
+  border: 1px solid #292929;
+  color: #fff;
+  text-shadow: none;
+}
+
+.command-line .arrow {
+  width: 40px;
+  background: transparent url(/assets/arrow.png) no-repeat center center;
+  display: inline-block;
+  text-ident: -9999px;
+}
+
+
+.ace_editor ::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.ace_editor ::-webkit-scrollbar:vertical { background: #323232 url('/assets/scroller-vertical-track.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar:horizontal { background: #323232 url('/assets/scroller-horizontal-track.png') repeat-x; }
+
+.ace_editor ::-webkit-scrollbar:vertical:disabled { background: #323232 url('/assets/scroller-vertical-track-disabled.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar:horizontal:disabled  { background: #323232 url('/assets/scroller-horizontal-track-disabled.png') repeat-x; }
+
+.ace_editor ::-webkit-scrollbar-corner { background-color: #323232; }
+
+.ace_editor ::-webkit-scrollbar-thumb:vertical { 
+  -webkit-border-image:url(/assets/scroller-knob-vertical.png) 10 0 10 0;
+  border-color:transparent;
+  border-width:10px 0;
+  min-height:20px;
+  margin-right: 2px;
+}
+
+.ace_editor ::-webkit-scrollbar-thumb:horizontal { 
+  -webkit-border-image:url(/assets/scroller-knob-horizontal.png) 0 10 0 10;
+  border-color:transparent;
+  border-width: 0 10px;
+  min-width:20px;
+  margin-bottom: 2px;
+}
+
+.ace_editor ::-webkit-scrollbar-track-piece:vertical:start { margin-top:-9px; }
+.ace_editor ::-webkit-scrollbar-track-piece:vertical:end { margin-bottom:-9px; }
+
+.ace_editor ::-webkit-scrollbar-track-piece:horizontal:start { margin-left:-9px; }
+.ace_editor ::-webkit-scrollbar-track-piece:horizontal:end { margin-right:-9px; }
+
+.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement,
+.ace_editor ::-webkit-scrollbar-button:vertical:end:increment  { height: 24px; display: block; }
+
+.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement,
+.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment  { width: 24px; display: block; }
+
+.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement { background: #323232 url('/assets/scroller-up-arrow.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement:active { background: #323232 url('/assets/scroller-up-arrow-highlighted.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement:disabled { background: #323232 url('/assets/scroller-up-arrow-disabled.png') repeat-y; }
+
+.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement { background: #323232 url('/assets/scroller-left-arrow.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement:active { background: #323232 url('/assets/scroller-left-arrow-highlighted.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement:disabled { background: #323232 url('/assets/scroller-left-arrow-disabled.png') repeat-y; }
+
+.ace_editor ::-webkit-scrollbar-button:vertical:end:increment { background: #323232 url('/assets/scroller-down-arrow.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:vertical:end:increment:active { background: #323232 url('/assets/scroller-down-arrow-highlighted.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:vertical:end:increment:disabled { background: #323232 url('/assets/scroller-down-arrow-disabled.png') repeat-y; }
+
+.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment { background: #323232 url('/assets/scroller-right-arrow.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment:active { background: #323232 url('/assets/scroller-right-arrow-highlighted.png') repeat-y; }
+.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment:disabled { background: #323232 url('/assets/scroller-right-arrow-disabled.png') repeat-y; }
+
+
+.ui-autocomplete {
+  z-index: 1000 !important;
+  max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 20px;
+}
+
+.ui-autocomplete::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.ui-autocomplete::-webkit-scrollbar-button:start:decrement,
+.ui-autocomplete::-webkit-scrollbar-button:end:increment  {
+  height: 0px;
+  display: block;
+  background-color: transparent;
+}
+
+
+.ui-autocomplete::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #666;
+  -webkit-border-radius: 4px;
+  margin: 2px;
+}
+
+
+
+
 

@@ -8,14 +8,14 @@ window.TabsView = Backbone.View.extend({
     
     OpenedFiles.bind('add', this.open);
     var self = this;
-    var canon = require('pilot/canon')
+    var canon = require('pilot/canon');
 
     canon.addCommand({
       name: 'new',
       bindKey: {
         win: 'Alt-T',
         mac: 'Alt-T',
-        sender: 'editor|*'
+        sender: function() { return document.body; }
       },
       exec: function(env, args, request) {
         self.create();
@@ -51,14 +51,23 @@ window.TabsView = Backbone.View.extend({
     var self = this;
     $(this.el).append("<ul />");
     $(this.el).tabs({
-      show: this.resize,
-      tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon dark ui-icon-circle-close'>Close File</span></li>",
+      show: function(event, ui){
+        var file_id = $(ui.panel).attr("id").replace("tab_", "");
+        var tabView = _.detect(self.tabs, function(tab) {
+          return tab.model.cid == file_id;
+        });
+        
+        if (tabView) {
+          tabView.focus();
+        }
+      },
+      tabTemplate: "<li><span class='ui-icon ui-icon-document'>File</span> <a href='#{href}' class='tab'>#{label}</a> <span class='ui-icon ui-icon-circle-close'>Close File</span></li>",
       remove: function(event, ui) {
         OpenedFiles.remove(OpenedFiles.getByCid($(ui.panel).attr("id").replace("tab_", "")));
       },
     });
     
-    $(this.el).find("span.ui-icon").live( "click", function() {
+    $(this.el).find("span.ui-icon-circle-close").live( "click", function() {
 			var index = $( "li", $(self.el) ).index( $( this ).parent() );
 			$(self.el).tabs( "remove", index );
 		});
