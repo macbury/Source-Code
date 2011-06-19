@@ -2,6 +2,8 @@ window.TabsView = Backbone.View.extend({
   tagName: "section",
   className: "documents-tabs",
   tabs: [],
+  selectedTab: null,
+  
   initialize: function() {
     _.bindAll(this, "render", "open", 'resize', "create");
     $(window).resize(this.resize);
@@ -15,14 +17,12 @@ window.TabsView = Backbone.View.extend({
       bindKey: {
         win: 'Alt-T',
         mac: 'Alt-T',
-        sender: function() { return document.body; }
+        sender: "editor|console"
       },
       exec: function(env, args, request) {
         self.create();
       }
     });
-    
-
   },
   
   resize: function(tab_id) {
@@ -44,6 +44,7 @@ window.TabsView = Backbone.View.extend({
     $(this.el).tabs( "select" , '#tab_'+file.cid );
     //$(this.el).find(".ui-tabs-nav").sortable({ axis: "x" });
     this.tabs.push(view);
+    this.selectedTab = view;
     this.resize();
   },
   
@@ -58,6 +59,7 @@ window.TabsView = Backbone.View.extend({
         });
         
         if (tabView) {
+          self.selectedTab = tabView;
           tabView.focus();
         }
       },

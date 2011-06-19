@@ -1,5 +1,5 @@
 body {
-  font: 10px Verdana;
+  font: 10px Arial;
   padding: 0px;
   margin: 0px;
   height: 100%;
@@ -7,6 +7,7 @@ body {
   overflow: hidden;
   background: #323232 url(../assets/background.jpg) repeat;
 }
+
 
 .documents-tabs {
   position: absolute;
@@ -87,16 +88,6 @@ body {
   border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
-.file-manager {
-  background: #323232;
-  left: 0px;
-  top: 0px;
-  bottom: 42px;
-  width: 239px;
-  position: absolute;
-  border-right: 1px solid #1F1F1F;
-  -webkit-box-shadow: -1px 0 0 rgba(255, 255, 255, 0.06) inset;
-}
 
 .command-line {
   position: absolute;
@@ -125,29 +116,29 @@ body {
   text-ident: -9999px;
 }
 
+.command-line form { display: inline-block }
 
-.ace_editor ::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
 }
 
-.ace_editor ::-webkit-scrollbar:vertical { background: #323232 url('/assets/scroller-vertical-track.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar:horizontal { background: #323232 url('/assets/scroller-horizontal-track.png') repeat-x; }
+::-webkit-scrollbar:vertical { background: #323232 url('/assets/scroller-vertical-track.png') repeat-y; }
+::-webkit-scrollbar:horizontal { background: #323232 url('/assets/scroller-horizontal-track.png') repeat-x; }
 
-.ace_editor ::-webkit-scrollbar:vertical:disabled { background: #323232 url('/assets/scroller-vertical-track-disabled.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar:horizontal:disabled  { background: #323232 url('/assets/scroller-horizontal-track-disabled.png') repeat-x; }
+::-webkit-scrollbar:vertical:disabled { background: #323232 url('/assets/scroller-vertical-track-disabled.png') repeat-y; }
+::-webkit-scrollbar:horizontal:disabled  { background: #323232 url('/assets/scroller-horizontal-track-disabled.png') repeat-x; }
 
-.ace_editor ::-webkit-scrollbar-corner { background-color: #323232; }
+::-webkit-scrollbar-corner { background-color: #323232; }
 
-.ace_editor ::-webkit-scrollbar-thumb:vertical { 
+::-webkit-scrollbar-thumb:vertical { 
   -webkit-border-image:url(/assets/scroller-knob-vertical.png) 10 0 10 0;
   border-color:transparent;
   border-width:10px 0;
   min-height:20px;
-  margin-right: 2px;
 }
 
-.ace_editor ::-webkit-scrollbar-thumb:horizontal { 
+::-webkit-scrollbar-thumb:horizontal { 
   -webkit-border-image:url(/assets/scroller-knob-horizontal.png) 0 10 0 10;
   border-color:transparent;
   border-width: 0 10px;
@@ -155,41 +146,56 @@ body {
   margin-bottom: 2px;
 }
 
-.ace_editor ::-webkit-scrollbar-track-piece:vertical:start { margin-top:-9px; }
-.ace_editor ::-webkit-scrollbar-track-piece:vertical:end { margin-bottom:-9px; }
+::-webkit-scrollbar-track-piece:vertical:start { margin-top:-9px; }
+::-webkit-scrollbar-track-piece:vertical:end { margin-bottom:-8px; }
 
-.ace_editor ::-webkit-scrollbar-track-piece:horizontal:start { margin-left:-9px; }
-.ace_editor ::-webkit-scrollbar-track-piece:horizontal:end { margin-right:-9px; }
+::-webkit-scrollbar-track-piece:horizontal:start { margin-left:-9px; }
+::-webkit-scrollbar-track-piece:horizontal:end { margin-right:-9px; }
 
-.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement,
-.ace_editor ::-webkit-scrollbar-button:vertical:end:increment  { height: 24px; display: block; }
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment  { height: 24px; display: block; }
 
-.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement,
-.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment  { width: 24px; display: block; }
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment  { width: 24px; display: block; }
 
-.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement { background: #323232 url('/assets/scroller-up-arrow.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement:active { background: #323232 url('/assets/scroller-up-arrow-highlighted.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:vertical:start:decrement:disabled { background: #323232 url('/assets/scroller-up-arrow-disabled.png') repeat-y; }
+::-webkit-scrollbar-button:vertical:start:decrement { background: #323232 url('/assets/scroller-up-arrow.png') repeat-y; }
+::-webkit-scrollbar-button:vertical:start:decrement:active { background: #323232 url('/assets/scroller-up-arrow-highlighted.png') repeat-y; }
+::-webkit-scrollbar-button:vertical:start:decrement:disabled { background: #323232 url('/assets/scroller-up-arrow-disabled.png') repeat-y; }
 
-.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement { background: #323232 url('/assets/scroller-left-arrow.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement:active { background: #323232 url('/assets/scroller-left-arrow-highlighted.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:horizontal:start:decrement:disabled { background: #323232 url('/assets/scroller-left-arrow-disabled.png') repeat-y; }
+::-webkit-scrollbar-button:horizontal:start:decrement { background: #323232 url('/assets/scroller-left-arrow.png') repeat-y; }
+::-webkit-scrollbar-button:horizontal:start:decrement:active { background: #323232 url('/assets/scroller-left-arrow-highlighted.png') repeat-y; }
+::-webkit-scrollbar-button:horizontal:start:decrement:disabled { background: #323232 url('/assets/scroller-left-arrow-disabled.png') repeat-y; }
 
-.ace_editor ::-webkit-scrollbar-button:vertical:end:increment { background: #323232 url('/assets/scroller-down-arrow.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:vertical:end:increment:active { background: #323232 url('/assets/scroller-down-arrow-highlighted.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:vertical:end:increment:disabled { background: #323232 url('/assets/scroller-down-arrow-disabled.png') repeat-y; }
+::-webkit-scrollbar-button:vertical:end:increment { background: #323232 url('/assets/scroller-down-arrow.png') repeat-y; }
+::-webkit-scrollbar-button:vertical:end:increment:active { background: #323232 url('/assets/scroller-down-arrow-highlighted.png') repeat-y; }
+::-webkit-scrollbar-button:vertical:end:increment:disabled { background: #323232 url('/assets/scroller-down-arrow-disabled.png') repeat-y; }
 
-.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment { background: #323232 url('/assets/scroller-right-arrow.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment:active { background: #323232 url('/assets/scroller-right-arrow-highlighted.png') repeat-y; }
-.ace_editor ::-webkit-scrollbar-button:horizontal:end:increment:disabled { background: #323232 url('/assets/scroller-right-arrow-disabled.png') repeat-y; }
+::-webkit-scrollbar-button:horizontal:end:increment { background: #323232 url('/assets/scroller-right-arrow.png') repeat-y; }
+::-webkit-scrollbar-button:horizontal:end:increment:active { background: #323232 url('/assets/scroller-right-arrow-highlighted.png') repeat-y; }
+::-webkit-scrollbar-button:horizontal:end:increment:disabled { background: #323232 url('/assets/scroller-right-arrow-disabled.png') repeat-y; }
 
 
 .ui-autocomplete {
   z-index: 1000 !important;
-  max-height: 100px;
-	overflow-y: auto;
-	overflow-x: hidden;
-	padding-right: 20px;
+}
+
+.ui-autocomplete .ui-state-hover .shortcut  {
+  margin-top: 1px;
+  margin-right: 5px;
+  background: #fff;
+  color: #2E63A5;
+}
+
+.ui-autocomplete .shortcut {
+  float: right;
+  display: inline-block;
+  background: #999;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  font-weight: bold;
+  font-size: 9px;
+  padding: 0 5px;
+  
 }
 
 .ui-autocomplete::-webkit-scrollbar {
@@ -212,7 +218,40 @@ body {
   margin: 2px;
 }
 
+.file-manager {
+  background: #323232;
+  left: 0px;
+  top: 0px;
+  bottom: 42px;
+  width: 239px;
+  position: absolute;
+  border-right: 1px solid #1F1F1F;
+  overflow: auto;
+  -webkit-box-shadow: -1px 0 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+.file-manager ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
 
 
+.file-manager ul a {
+  padding: 5px;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+  text-shadow: rgba(41, 42, 43, 1) 0px 1px 0px;
+}
 
+.file-manager ul ul {
+  padding-left: 16px;
+}
 
+.file-manager ul a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#5E9AE2), to(#3570B8));
+  border-top: 1px solid #3A9BEC;
+  border-bottom: 1px solid #185F97;
+}
