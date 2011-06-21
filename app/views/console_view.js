@@ -13,8 +13,18 @@ window.ConsoleView = Backbone.View.extend({
   commands: function() {
     var commands = [];
     var canon = this.canon;
-    _.each(canon.getCommandNames(), function(command) {
-      commands.push(canon.getCommand(command));
+    _.each(canon.getCommandNames(), function(command_name) {
+      var command = canon.getCommand(command_name);
+      var item = {
+        value: command.name,
+        label: command.name,
+        key: "None"
+      };
+      
+      if (command.bindKey && command.bindKey["win"]) {
+        item.key = command.bindKey["win"].split("|").join(" ");
+      }
+      commands.push(item);
     });
     
     return commands;
@@ -39,7 +49,9 @@ window.ConsoleView = Backbone.View.extend({
     $(this.el).find("form").submit(this.execCommand);
     this.input = $(this.el).find("form").find("input");
     this.input.autocomplete({
-			source: this.canon.getCommandNames(),
+      minLength: 3,
+			source: this.commands(),
+			autoFocus: false,
 			position: { my : "right bottom", at: "right top" },
 			focus: function( event, ui ) {
 				self.input.val(ui.item.value);
@@ -53,7 +65,7 @@ window.ConsoleView = Backbone.View.extend({
 		}).data( "autocomplete" )._renderItem = function( ul, item ) {
 			return $( "<li></li>" )
 				.data( "item.autocomplete", item )
-				.append( "<a><span class='shortcut'>Ctr+A</span>" + item.value + "</a>" )
+				.append( "<a><span class='shortcut'>"+item.key+"</span>" + item.value + "</a>" )
 				.appendTo( ul );
 		};
     this.resize();
