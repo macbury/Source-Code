@@ -3,6 +3,7 @@ window.MainView = Backbone.View.extend({
   
   initialize: function() {
     _.bindAll(this, "render", "resize");
+    var self = this;
     this.tabs = new TabsView();
     this.consoleView = new ConsoleView();
     this.consoleView.tabsView = this.tabs;
@@ -10,6 +11,8 @@ window.MainView = Backbone.View.extend({
     this.render();
     
     $(document).resize(this.resize);
+    
+
   },
   
   render: function() {

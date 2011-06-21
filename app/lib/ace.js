@@ -5853,7 +5853,7 @@ var Editor =function(renderer, session) {
     };
 
     this.onCut = function() {
-        if (this.$readOnly)
+        if (this.$readOnly) 
             return;
 
         if (!this.selection.isEmpty()) {
